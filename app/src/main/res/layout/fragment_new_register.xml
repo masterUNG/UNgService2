@@ -6,11 +6,11 @@
 
     <!--Toolbar-->
     <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarRegister"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
 
 
     </android.support.v7.widget.Toolbar>
@@ -18,76 +18,79 @@
     <!--Content-->
     <!--Name-->
     <LinearLayout
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="#82ffffff"
+        android:orientation="horizontal">
 
         <!--Icon-->
         <ImageView
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_action_name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_action_name" />
 
         <!--TextField-->
         <EditText
-            android:inputType="text"
-            android:hint="@string/name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="@string/name"
+            android:inputType="text" />
 
 
     </LinearLayout>
 
     <!--User-->
     <LinearLayout
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#82ffffff"
+        android:orientation="horizontal">
 
         <!--Icon-->
         <ImageView
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_action_user"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_action_user" />
 
         <!--TextField-->
         <EditText
-            android:inputType="text"
-            android:hint="@string/user"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="@string/user"
+            android:inputType="text" />
 
 
     </LinearLayout>
 
     <!--Password-->
     <LinearLayout
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#82ffffff"
+        android:orientation="horizontal">
 
         <!--Icon-->
         <ImageView
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_action_password"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_action_password" />
 
         <!--TextField-->
         <EditText
-            android:inputType="text"
-            android:hint="@string/password"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:inputType="text" />
 
 
     </LinearLayout>
