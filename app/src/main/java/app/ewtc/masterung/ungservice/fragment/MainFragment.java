@@ -101,6 +101,12 @@ public class MainFragment extends Fragment {
                 if (passwordString.equals(strings[3])) {
                     Toast.makeText(getActivity(),
                             "Welcome " + strings[1], Toast.LENGTH_SHORT).show();
+
+                    getActivity().getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.contentFragmentMain, ServiceFragment.serviceInstance(strings))
+                            .addToBackStack(null)
+                            .commit();
+
                 } else {
                     myAlert.myDialog("Password False",
                             "Please Try Agains Password False");

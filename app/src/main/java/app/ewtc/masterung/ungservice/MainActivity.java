@@ -20,4 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     }   // Main Method
 
+    @Override
+    public void onBackPressed() {
+        //
+    }
 }   // Main Class
