@@ -12,6 +12,9 @@ import android.widget.ImageView;
 
 import app.ewtc.masterung.ungservice.MainActivity;
 import app.ewtc.masterung.ungservice.R;
+import app.ewtc.masterung.ungservice.utility.MyAlert;
+import app.ewtc.masterung.ungservice.utility.MyConstant;
+import app.ewtc.masterung.ungservice.utility.MyPostData;
 
 /**
  * Created by masterung on 28/10/2017 AD.
@@ -53,15 +56,37 @@ public class RegisterFragment extends Fragment{
 //                Check Space
                 if (nameString.equals("") || userString.equals("") || passwordString.equals("")) {
 //                    Have Space
+                    MyAlert myAlert = new MyAlert(getActivity());
+                    myAlert.myDialog("Have Space", "Please Fill All Blank");
 
                 } else {
 //                    No Space
-
+                    uploadToServer();
                 }
 
 
             }   // onClick
         });
+    }
+
+    private void uploadToServer() {
+
+        try {
+
+            MyConstant myConstant = new MyConstant();
+            MyPostData myPostData = new MyPostData(getActivity());
+            myPostData.execute(nameString, userString, passwordString,
+                    myConstant.getUrlAddUserString());
+
+            if () {
+            } else {
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void createToolbar() {
