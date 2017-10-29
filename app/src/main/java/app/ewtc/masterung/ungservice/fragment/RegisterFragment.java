@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import app.ewtc.masterung.ungservice.MainActivity;
 import app.ewtc.masterung.ungservice.R;
@@ -78,8 +79,11 @@ public class RegisterFragment extends Fragment{
             myPostData.execute(nameString, userString, passwordString,
                     myConstant.getUrlAddUserString());
 
-            if () {
+            if (Boolean.parseBoolean(myPostData.get())) {
+                Toast.makeText(getActivity(), "Save OK", Toast.LENGTH_SHORT).show();
+                getActivity().getSupportFragmentManager().popBackStack();
             } else {
+                Toast.makeText(getActivity(), "Save Error", Toast.LENGTH_SHORT).show();
             }
 
 
