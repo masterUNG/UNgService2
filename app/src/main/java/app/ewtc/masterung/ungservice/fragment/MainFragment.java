@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -75,6 +76,7 @@ public class MainFragment extends Fragment {
             boolean b = true;
             String[] strings = new String[4];
             MyConstant myConstant = new MyConstant();
+            MyAlert myAlert = new MyAlert(getActivity());
             String[] columnUserStrings1 = myConstant.getColumeUserStrings();
             MyGetAllData myGetAllData = new MyGetAllData(getActivity());
             myGetAllData.execute(myConstant.getUrlGetUserString());
@@ -90,6 +92,18 @@ public class MainFragment extends Fragment {
                     for (int i1=0; i1<strings.length; i1++) {
                         strings[i1] = jsonObject.getString(columnUserStrings1[i1]);
                     }
+                }
+            }
+
+            if (b) {
+                myAlert.myDialog("User False", "No This User in my Database");
+            } else {
+                if (passwordString.equals(strings[3])) {
+                    Toast.makeText(getActivity(),
+                            "Welcome " + strings[1], Toast.LENGTH_SHORT).show();
+                } else {
+                    myAlert.myDialog("Password False",
+                            "Please Try Agains Password False");
                 }
             }
 
