@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import app.ewtc.masterung.ungservice.MainActivity;
@@ -39,9 +40,27 @@ public class RegisterFragment extends Fragment{
             @Override
             public void onClick(View v) {
 
+//                Get Value From EditText
+                EditText nameEditText = getView().findViewById(R.id.edtName);
+                EditText userEditText = getView().findViewById(R.id.edtUser);
+                EditText passwordEditText = getView().findViewById(R.id.edtPassword);
+
+//                Change Type Value to String
+                nameString = nameEditText.getText().toString().trim();
+                userString = userEditText.getText().toString().trim();
+                passwordString = passwordEditText.getText().toString().trim();
+
+//                Check Space
+                if (nameString.equals("") || userString.equals("") || passwordString.equals("")) {
+//                    Have Space
+
+                } else {
+//                    No Space
+
+                }
 
 
-            }
+            }   // onClick
         });
     }
 
