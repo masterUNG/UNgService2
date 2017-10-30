@@ -8,7 +8,13 @@ public class MyConstant {
 
     private String urlAddUserString = "http://androidthai.in.th/29oct/addDataMaster.php";
     private String urlGetUserString = "http://androidthai.in.th/29oct/getAllDataMaster.php";
+    private String urlDeleteDataString = "http://androidthai.in.th/29oct/deleteDataMaster.php";
+
     private String[] columeUserStrings = new String[]{"id", "Name", "User", "Password"};
+
+    public String getUrlDeleteDataString() {
+        return urlDeleteDataString;
+    }
 
     public String[] getColumeUserStrings() {
         return columeUserStrings;

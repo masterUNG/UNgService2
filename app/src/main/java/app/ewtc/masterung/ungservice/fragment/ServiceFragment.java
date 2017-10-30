@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -20,6 +21,7 @@ import org.json.JSONObject;
 import app.ewtc.masterung.ungservice.MainActivity;
 import app.ewtc.masterung.ungservice.R;
 import app.ewtc.masterung.ungservice.utility.MyConstant;
+import app.ewtc.masterung.ungservice.utility.MyDeleteData;
 import app.ewtc.masterung.ungservice.utility.MyGetAllData;
 
 /**
@@ -102,7 +104,7 @@ public class ServiceFragment extends Fragment {
 
     }
 
-    private void showAlert(String idString, String nameString, String userString, String passwordString) {
+    private void showAlert(final String idString, String nameString, String userString, String passwordString) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setCancelable(false);
@@ -118,11 +120,31 @@ public class ServiceFragment extends Fragment {
         builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                deleteRecordData(idString);
                 dialog.dismiss();
             }
         });
         builder.show();
 
+    }
+
+    private void deleteRecordData(String idString) {
+        try {
+
+            MyConstant myConstant = new MyConstant();
+            MyDeleteData myDeleteData = new MyDeleteData(getActivity());
+            myDeleteData.execute(idString, myConstant.getUrlDeleteDataString());
+
+            if (Boolean.parseBoolean(myDeleteData.get())) {
+                Toast.makeText(getActivity(), "Delete Success", Toast.LENGTH_SHORT).show();
+                createListView();
+            } else {
+                Toast.makeText(getActivity(), "Delete Error", Toast.LENGTH_SHORT).show();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void createToolbar() {
